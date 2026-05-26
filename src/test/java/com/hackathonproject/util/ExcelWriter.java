@@ -10,42 +10,45 @@ import java.io.IOException;
 import java.util.List;
 
 public class ExcelWriter {
+
     private static final Logger log = LogManager.getLogger(ExcelWriter.class);
     private static final String FILE_PATH = "target/generatedData.xlsx";
 
-    private static final Workbook workbook = new XSSFWorkbook();
-    private static final Sheet hospitalSheet = workbook.createSheet("Hospitals");
-    private static final Sheet citiesSheet = workbook.createSheet("Top Cities");
-
-    static {
-        // Create header rows once
-        hospitalSheet.createRow(0).createCell(0).setCellValue("Hospital Name");
-        citiesSheet.createRow(0).createCell(0).setCellValue("City Name");
-    }
-
-    public static void writeHospitals(List<String> hospitals) {
-        int rowNum = 1;
-        for (String hospital : hospitals) {
-            hospitalSheet.createRow(rowNum++).createCell(0).setCellValue(hospital);
+    public static synchronized void writeHospitals(List<String> hospitals) {
+        try (Workbook workbook = new XSSFWorkbook()) {
+            Sheet sheet = workbook.createSheet("Hospitals");
+            sheet.createRow(0).createCell(0).setCellValue("Hospital Name");
+            int rowNum = 1;
+            for (String hospital : hospitals) {
+                sheet.createRow(rowNum++).createCell(0).setCellValue(hospital);
+            }
+            save(workbook);
+            log.info("Written {} hospitals to Excel", hospitals.size());
+        } catch (IOException e) {
+            log.error("Failed to write hospitals to Excel: {}", e.getMessage());
         }
-        log.info("Written " + hospitals.size() + " hospitals to Excel");
-        save();
     }
 
-    public static void writeCities(List<String> cities) {
-        int rowNum = 1;
-        for (String city : cities) {
-            citiesSheet.createRow(rowNum++).createCell(0).setCellValue(city);
+    public static synchronized void writeCities(List<String> cities) {
+        try (Workbook workbook = new XSSFWorkbook()) {
+            Sheet sheet = workbook.createSheet("Top Cities");
+            sheet.createRow(0).createCell(0).setCellValue("City Name");
+            int rowNum = 1;
+            for (String city : cities) {
+                sheet.createRow(rowNum++).createCell(0).setCellValue(city);
+            }
+            save(workbook);
+            log.info("Written {} cities to Excel", cities.size());
+        } catch (IOException e) {
+            log.error("Failed to write cities to Excel: {}", e.getMessage());
         }
-        log.info("Written " + cities.size() + " cities to Excel");
-        save();
     }
 
-    private static void save() {
+    private static void save(Workbook workbook) {
         try (FileOutputStream fos = new FileOutputStream(FILE_PATH)) {
             workbook.write(fos);
         } catch (IOException e) {
-            log.error("Failed to save Excel file: " + e.getMessage());
+            log.error("Failed to save Excel file: {}", e.getMessage());
         }
     }
 }

@@ -1,7 +1,6 @@
 package com.hackathonproject.hooks;
 
 import com.hackathonproject.base.BaseTest;
-import com.hackathonproject.util.ExtentUtil;
 import com.hackathonproject.util.ScreenshotUtil;
 import io.cucumber.java.After;
 import io.cucumber.java.AfterAll;
@@ -18,7 +17,6 @@ public class CucumberHooks {
     @BeforeAll
     public static void beforeAll() {
         log.info("========== TEST EXECUTION STARTED ==========");
-        ExtentUtil.initReport();
     }
 
     @Before
@@ -50,6 +48,5 @@ public class CucumberHooks {
     @AfterAll
     public static void afterAll() {
         log.info("========== TEST EXECUTION COMPLETED ==========");
-        ExtentUtil.flushReport();
     }
 }

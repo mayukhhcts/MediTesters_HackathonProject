@@ -1,0 +1,27 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 182.7 s <<< FAILURE! -- in TestSuite
+com.hackathonproject.runner.TestRunner.runScenario["Fill Corporate Wellness form with invalid details and capture warning", "Finding Hospitals on Practo website"](3) -- Time elapsed: 51.75 s <<< FAILURE!
+org.openqa.selenium.TimeoutException: 
+timeout: Timed out receiving message from renderer: 30.000
+  (Session info: MicrosoftEdge=148.0.3967.83)
+Build info: version: '4.43.0', revision: 'dd0f534'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.10'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [350bc28d2852ed08ba5387c278908e17, getTitle {}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 148.0.3967.83, fedcm:accounts: true, goog:processID: 12568, ms:edgeOptions: {debuggerAddress: localhost:60990}, msedge: {msedgedriverVersion: 148.0.3967.70 (8956564be045..., userDataDir: C:\Users\2485864\AppData\Lo...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60990/devtoo..., se:cdpVersion: 148.0.3967.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 350bc28d2852ed08ba5387c278908e17
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:688)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:692)
+	at org.openqa.selenium.remote.RemoteWebDriver.getTitle(RemoteWebDriver.java:379)
+	at com.hackathonproject.steps.StepDefs.navigateCorporate(StepDefs.java:99)
+	at ✽.the user navigates to Corporate Wellness page(file:///C:/Users/2485864/eclipse-workspace/HackathonProject-PractoTest-MediTesters/src/test/resources/features/Practo.feature:15)
+

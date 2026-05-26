@@ -11,30 +11,40 @@ import com.hackathonproject.base.BaseTest;
 
 @CucumberOptions(
         features = "src/test/resources/features",
-        glue = {"com.hackathonproject.steps", "com.hackathonproject.base", "com.hackathonproject.hooks"},
+        glue = {
+                "com.hackathonproject.steps",
+                "com.hackathonproject.base",
+                "com.hackathonproject.hooks"
+        },
         plugin = {
                 "pretty",
+                "html:target/cucumber-reports/cucumber.html",
+                "json:target/cucumber-reports/cucumber.json",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                 "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
         }
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
 
-    private static final ThreadLocal<String> browserName = new ThreadLocal<>();
+    private static final ThreadLocal<String> browserThreadLocal = new ThreadLocal<>();
+
+    // Keep static for backward compatibility with ScreenshotUtil and BaseTest
+    public static String browserName = "chrome";
 
     public static String getBrowserName() {
-        return browserName.get();
+        return browserThreadLocal.get() != null ? browserThreadLocal.get() : browserName;
     }
 
     @BeforeClass
     @Parameters("browser")
     public void setBrowser(@Optional("chrome") String browser) {
-        browserName.set(browser);
+        browserThreadLocal.set(browser);
+        browserName = browser;
     }
 
     @AfterClass
     public void closeBrowser() {
         BaseTest.quitDriver();
-        browserName.remove();
+        browserThreadLocal.remove();
     }
 }
