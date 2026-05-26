@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Practo_Cross_Browser_Suite" class="navigator-link">
-              <span class="suite-name border-passed">Practo Cross-Browser Suite</span>
+              <span class="suite-name border-failed">Practo Cross-Browser Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,7 +92,26 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">6 methods,   6 passed</span>
+                    <span class="method-stats">6 methods, 2 failed,   4 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Practo_Cross_Browser_Suite" class="hide-methods failed suite-Practo_Cross_Browser_Suite"> (hide)</a> <!-- hide-methods failed suite-Practo_Cross_Browser_Suite -->
+                      <a href="#" panel-name="suite-Practo_Cross_Browser_Suite" class="show-methods failed suite-Practo_Cross_Browser_Suite"> (show)</a> <!-- show-methods failed suite-Practo_Cross_Browser_Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Practo_Cross_Browser_Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Practo_Cross_Browser_Suite" title="com.hackathonproject.runner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Fill Corporate Wellness form with invalid details and capture warning&quot;, &quot;Finding Hospitals on Pract...)">runScenario("Fill Corporate Wellness form with invalid details and capture warning", "Finding Hospitals on Pract...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Practo_Cross_Browser_Suite" title="com.hackathonproject.runner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Fill Corporate Wellness form with invalid details and capture warning&quot;, &quot;Finding Hospitals on Pract...)">runScenario("Fill Corporate Wellness form with invalid details and capture warning", "Finding Hospitals on Pract...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Practo_Cross_Browser_Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -101,16 +120,6 @@
                       <a href="#" panel-name="suite-Practo_Cross_Browser_Suite" class="show-methods passed suite-Practo_Cross_Browser_Suite"> (show)</a> <!-- show-methods passed suite-Practo_Cross_Browser_Suite -->
                     </span>
                     <div class="method-list-content passed suite-Practo_Cross_Browser_Suite">
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Practo_Cross_Browser_Suite" title="com.hackathonproject.runner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Fill Corporate Wellness form with invalid details and capture warning&quot;, &quot;Finding Hospitals on Pract...)">runScenario("Fill Corporate Wellness form with invalid details and capture warning", "Finding Hospitals on Pract...)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Practo_Cross_Browser_Suite" title="com.hackathonproject.runner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Find Hospitals in Bangalore open 24x7 with parking and rating above 3.5&quot;, &quot;Finding Hospitals on Pra...)">runScenario("Find Hospitals in Bangalore open 24x7 with parking and rating above 3.5", "Finding Hospitals on Pra...)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Practo_Cross_Browser_Suite" title="com.hackathonproject.runner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Capture top cities from Diagnostics page on Practo website&quot;, &quot;Finding Hospitals on Practo website&quot;)">runScenario("Capture top cities from Diagnostics page on Practo website", "Finding Hospitals on Practo website")</a> <!-- method navigator-link -->
@@ -123,7 +132,7 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Practo_Cross_Browser_Suite" title="com.hackathonproject.runner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Fill Corporate Wellness form with invalid details and capture warning&quot;, &quot;Finding Hospitals on Pract...)">runScenario("Fill Corporate Wellness form with invalid details and capture warning", "Finding Hospitals on Pract...)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Practo_Cross_Browser_Suite" title="com.hackathonproject.runner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Find Hospitals in Bangalore open 24x7 with parking and rating above 3.5&quot;, &quot;Finding Hospitals on Pra...)">runScenario("Find Hospitals in Bangalore open 24x7 with parking and rating above 3.5", "Finding Hospitals on Pra...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -143,9 +152,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Practo_Cross_Browser_Suite" class="panel Practo_Cross_Browser_Suite">
-          <div class="suite-Practo_Cross_Browser_Suite-class-passed">
+          <div class="suite-Practo_Cross_Browser_Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">com.hackathonproject.runner.TestRunner</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -155,20 +164,40 @@
                   </a> <!-- runScenario("Fill Corporate Wellness form with invalid details and capture warning", "Finding Hospitals on Pract...) -->
                   <span class="method-name">runScenario</span>
                   <span class="parameters">("Fill Corporate Wellness form with invalid details and capture warning","Finding Hospitals on Practo website")</span>
+                  <div class="stack-trace">java.lang.AssertionError: The following asserts failed:
+	FAIL: No warning message captured. Practo form did not validate invalid input. Either locators changed or site behaviour changed.
+	at com.hackathonproject.steps.StepDefs.captureStatus(StepDefs.java:147)
+	at ✽.the submit button status is captured(file:///C:/Users/2485864/eclipse-workspace/HackathonProject-PractoTest-MediTesters/src/test/resources/features/Practo.feature:17)
+... Removed 2 stack frames
+</div> <!-- stack-trace -->
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;Find Hospitals in Bangalore open 24x7 with parking and rating above 3.5&quot;, &quot;Finding Hospitals on Pra...)">
-                  </a> <!-- runScenario("Find Hospitals in Bangalore open 24x7 with parking and rating above 3.5", "Finding Hospitals on Pra...) -->
+                  <a name="runScenario(&quot;Fill Corporate Wellness form with invalid details and capture warning&quot;, &quot;Finding Hospitals on Pract...)">
+                  </a> <!-- runScenario("Fill Corporate Wellness form with invalid details and capture warning", "Finding Hospitals on Pract...) -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("Find Hospitals in Bangalore open 24x7 with parking and rating above 3.5","Finding Hospitals on Practo website")</span>
+                  <span class="parameters">("Fill Corporate Wellness form with invalid details and capture warning","Finding Hospitals on Practo website")</span>
+                  <div class="stack-trace">java.lang.AssertionError: The following asserts failed:
+	FAIL: No warning message captured. Practo form did not validate invalid input. Either locators changed or site behaviour changed.
+	at com.hackathonproject.steps.StepDefs.captureStatus(StepDefs.java:147)
+	at ✽.the submit button status is captured(file:///C:/Users/2485864/eclipse-workspace/HackathonProject-PractoTest-MediTesters/src/test/resources/features/Practo.feature:17)
+... Removed 2 stack frames
+</div> <!-- stack-trace -->
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Practo_Cross_Browser_Suite-class-failed -->
+          <div class="suite-Practo_Cross_Browser_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.hackathonproject.runner.TestRunner</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
                   <a name="runScenario(&quot;Capture top cities from Diagnostics page on Practo website&quot;, &quot;Finding Hospitals on Practo website&quot;)">
@@ -191,10 +220,10 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;Fill Corporate Wellness form with invalid details and capture warning&quot;, &quot;Finding Hospitals on Pract...)">
-                  </a> <!-- runScenario("Fill Corporate Wellness form with invalid details and capture warning", "Finding Hospitals on Pract...) -->
+                  <a name="runScenario(&quot;Find Hospitals in Bangalore open 24x7 with parking and rating above 3.5&quot;, &quot;Finding Hospitals on Pra...)">
+                  </a> <!-- runScenario("Find Hospitals in Bangalore open 24x7 with parking and rating above 3.5", "Finding Hospitals on Pra...) -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("Fill Corporate Wellness form with invalid details and capture warning","Finding Hospitals on Practo website")</span>
+                  <span class="parameters">("Find Hospitals in Bangalore open 24x7 with parking and rating above 3.5","Finding Hospitals on Practo website")</span>
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
@@ -288,32 +317,32 @@ data.addRows(6);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'com.hackathonproject.runner.TestRunner')
-data.setCell(0, 3, 157697);
+data.setCell(0, 3, 58925);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'runScenario')
 data.setCell(1, 2, 'com.hackathonproject.runner.TestRunner')
-data.setCell(1, 3, 157025);
+data.setCell(1, 3, 48073);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'runScenario')
 data.setCell(2, 2, 'com.hackathonproject.runner.TestRunner')
-data.setCell(2, 3, 22678);
+data.setCell(2, 3, 12705);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'runScenario')
 data.setCell(3, 2, 'com.hackathonproject.runner.TestRunner')
-data.setCell(3, 3, 20886);
+data.setCell(3, 3, 12569);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'runScenario')
 data.setCell(4, 2, 'com.hackathonproject.runner.TestRunner')
-data.setCell(4, 3, 12618);
+data.setCell(4, 3, 7629);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'runScenario')
 data.setCell(5, 2, 'com.hackathonproject.runner.TestRunner')
-data.setCell(5, 3, 11318);
+data.setCell(5, 3, 6085);
 window.suiteTableData['Practo_Cross_Browser_Suite']= { tableData: data, tableDiv: 'times-div-Practo_Cross_Browser_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 minutes</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Practo_Cross_Browser_Suite">
               </div> <!-- times-div-Practo_Cross_Browser_Suite -->
             </div> <!-- times-div -->
@@ -350,51 +379,55 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">setBrowser(edge)</span>
-                <span class="method-start">1618 ms</span>
+                <span class="method-start">1956 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">setBrowser(chrome)</span>
-                <span class="method-start">1618 ms</span>
+                <span class="method-start">1956 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">runScenario("Find Hospitals in Bangalore open 24x7 with parking and rating above 3.5", "Finding Hospitals on Pra...)</span>
-                <span class="method-start">1638 ms</span>
+                <span class="method-start">1978 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">runScenario("Find Hospitals in Bangalore open 24x7 with parking and rating above 3.5", "Finding Hospitals on Pra...)</span>
-                <span class="method-start">1638 ms</span>
+                <span class="method-start">1978 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">runScenario("Capture top cities from Diagnostics page on Practo website", "Finding Hospitals on Practo website")</span>
-                <span class="method-start">158672 ms</span>
+                <span class="method-start">50059 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Fill Corporate Wellness form with invalid details and capture warning", "Finding Hospitals on Pract...)</span>
+                <span class="method-start">56152 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">runScenario("Capture top cities from Diagnostics page on Practo website", "Finding Hospitals on Practo website")</span>
-                <span class="method-start">159335 ms</span>
+                <span class="method-start">60907 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">runScenario("Fill Corporate Wellness form with invalid details and capture warning", "Finding Hospitals on Pract...)</span>
-                <span class="method-start">170658 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">runScenario("Fill Corporate Wellness form with invalid details and capture warning", "Finding Hospitals on Pract...)</span>
-                <span class="method-start">171302 ms</span>
+                <span class="method-start">68538 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">192194 ms</span>
+                <span class="method-start">69279 ms</span>
+              </div> <!-- configuration-class after -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDownClass</span>
+                <span class="method-start">78290 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-class after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">193340 ms</span>
+                <span class="method-start">81532 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">198134 ms</span>
-              </div> <!-- configuration-class after -->
-              <div class="configuration-class after">
-                <span class="method-name">tearDownClass</span>
-                <span class="method-start">199576 ms</span>
+                <span class="method-start">86849 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

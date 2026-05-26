@@ -12,10 +12,24 @@
           <include name="setUpClass"/>
           <include name="setBrowser"/>
           <include name="tearDownClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
+          <include name="runScenario" invocation-numbers="2"/>
           <include name="closeBrowser"/>
         </methods>
       </class> <!-- com.hackathonproject.runner.TestRunner -->
     </classes>
   </test> <!-- Edge Test(failed) -->
+  <test thread-count="2" parallel="tests" name="Chrome Test(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.hackathonproject.runner.TestRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="setBrowser"/>
+          <include name="tearDownClass"/>
+          <include name="runScenario" invocation-numbers="2"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- com.hackathonproject.runner.TestRunner -->
+    </classes>
+  </test> <!-- Chrome Test(failed) -->
 </suite> <!-- Failed suite [Practo Cross-Browser Suite] -->
