@@ -1,99 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="5" failed="1" skipped="0">
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-05-26T11:54:26 IST" name="Practo Cross-Browser Suite" finished-at="2026-05-26T11:57:27 IST" duration-ms="181307">
+  <suite started-at="2026-05-27T12:09:47 IST" name="Practo Cross-Browser Suite" finished-at="2026-05-27T12:11:32 IST" duration-ms="105098">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.hackathonproject.runner.TestRunner@732d0d24]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.hackathonproject.runner.TestRunner@7ceb3185]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2026-05-26T11:54:26 IST" name="Chrome Test" finished-at="2026-05-26T11:57:01 IST" duration-ms="154947">
+    <test started-at="2026-05-27T12:09:47 IST" name="Edge Test" finished-at="2026-05-27T12:11:23 IST" duration-ms="96216">
       <class name="com.hackathonproject.runner.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.hackathonproject.runner.TestRunner@7ceb3185]" started-at="2026-05-26T11:54:26 IST" name="setUpClass" finished-at="2026-05-26T11:54:28 IST" duration-ms="1579" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@600b90df]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="setBrowser(java.lang.String)[pri:0, instance:com.hackathonproject.runner.TestRunner@7ceb3185]" started-at="2026-05-26T11:54:28 IST" name="setBrowser" finished-at="2026-05-26T11:54:28 IST" duration-ms="3" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setBrowser -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.hackathonproject.runner.TestRunner@7ceb3185]" started-at="2026-05-26T11:54:28 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-26T11:55:53 IST" duration-ms="85600" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Find Hospitals in Bangalore open 24x7 with parking and rating above 3.5"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Finding Hospitals on Practo website"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.hackathonproject.runner.TestRunner@7ceb3185]" started-at="2026-05-26T11:55:53 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-26T11:56:14 IST" duration-ms="20484" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Capture top cities from Diagnostics page on Practo website"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Finding Hospitals on Practo website"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.hackathonproject.runner.TestRunner@7ceb3185]" started-at="2026-05-26T11:56:14 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-26T11:56:55 IST" duration-ms="41729" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Fill Corporate Wellness form with invalid details and capture warning"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Finding Hospitals on Practo website"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.hackathonproject.runner.TestRunner@7ceb3185]" started-at="2026-05-26T11:56:55 IST" name="closeBrowser" finished-at="2026-05-26T11:57:00 IST" duration-ms="4724" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.hackathonproject.runner.TestRunner@7ceb3185]" started-at="2026-05-26T11:57:00 IST" name="tearDownClass" finished-at="2026-05-26T11:57:01 IST" duration-ms="746" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- com.hackathonproject.runner.TestRunner -->
-    </test> <!-- Chrome Test -->
-    <test started-at="2026-05-26T11:54:26 IST" name="Edge Test" finished-at="2026-05-26T11:57:27 IST" duration-ms="181307">
-      <class name="com.hackathonproject.runner.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.hackathonproject.runner.TestRunner@732d0d24]" started-at="2026-05-26T11:54:26 IST" name="setUpClass" finished-at="2026-05-26T11:54:28 IST" duration-ms="1579" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.hackathonproject.runner.TestRunner@732d0d24]" started-at="2026-05-27T12:09:47 IST" name="setUpClass" finished-at="2026-05-27T12:09:49 IST" duration-ms="1568" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -104,7 +22,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="setBrowser(java.lang.String)[pri:0, instance:com.hackathonproject.runner.TestRunner@732d0d24]" started-at="2026-05-26T11:54:28 IST" name="setBrowser" finished-at="2026-05-26T11:54:28 IST" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="setBrowser(java.lang.String)[pri:0, instance:com.hackathonproject.runner.TestRunner@732d0d24]" started-at="2026-05-27T12:09:49 IST" name="setBrowser" finished-at="2026-05-27T12:09:49 IST" duration-ms="4" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -115,7 +33,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.hackathonproject.runner.TestRunner@732d0d24]" started-at="2026-05-26T11:54:28 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-26T11:56:12 IST" duration-ms="104857" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.hackathonproject.runner.TestRunner@732d0d24]" started-at="2026-05-27T12:09:49 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-27T12:10:46 IST" duration-ms="56860" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -131,7 +49,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.hackathonproject.runner.TestRunner@732d0d24]" started-at="2026-05-26T11:56:12 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-26T11:56:30 IST" duration-ms="17463" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.hackathonproject.runner.TestRunner@732d0d24]" started-at="2026-05-27T12:10:46 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-27T12:10:53 IST" duration-ms="7510" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -147,11 +65,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.hackathonproject.runner.TestRunner@732d0d24]" started-at="2026-05-26T11:56:30 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-26T11:57:21 IST" duration-ms="51342" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.hackathonproject.runner.TestRunner@732d0d24]" started-at="2026-05-27T12:10:53 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-27T12:11:09 IST" duration-ms="15424" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Fill Corporate Wellness form with invalid details and capture warning"]]>
+                <![CDATA["Verify submit button is disabled when Corporate Wellness form has invalid phone number"]]>
               </value>
             </param>
             <param index="1">
@@ -160,53 +78,100 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[timeout: Timed out receiving message from renderer: 30.000
-  (Session info: MicrosoftEdge=148.0.3967.83)
-Build info: version: '4.43.0', revision: 'dd0f534'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.10'
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [350bc28d2852ed08ba5387c278908e17, getTitle {}]
-Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 148.0.3967.83, fedcm:accounts: true, goog:processID: 12568, ms:edgeOptions: {debuggerAddress: localhost:60990}, msedge: {msedgedriverVersion: 148.0.3967.70 (8956564be045..., userDataDir: C:\Users\2485864\AppData\Lo...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60990/devtoo..., se:cdpVersion: 148.0.3967.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 350bc28d2852ed08ba5387c278908e17]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: 30.000
-  (Session info: MicrosoftEdge=148.0.3967.83)
-Build info: version: '4.43.0', revision: 'dd0f534'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.10'
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [350bc28d2852ed08ba5387c278908e17, getTitle {}]
-Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 148.0.3967.83, fedcm:accounts: true, goog:processID: 12568, ms:edgeOptions: {debuggerAddress: localhost:60990}, msedge: {msedgedriverVersion: 148.0.3967.70 (8956564be045..., userDataDir: C:\Users\2485864\AppData\Lo...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60990/devtoo..., se:cdpVersion: 148.0.3967.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 350bc28d2852ed08ba5387c278908e17
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:688)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:692)
-at org.openqa.selenium.remote.RemoteWebDriver.getTitle(RemoteWebDriver.java:379)
-at com.hackathonproject.steps.StepDefs.navigateCorporate(StepDefs.java:99)
-at ✽.the user navigates to Corporate Wellness page(file:///C:/Users/2485864/eclipse-workspace/HackathonProject-PractoTest-MediTesters/src/test/resources/features/Practo.feature:15)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.hackathonproject.runner.TestRunner@732d0d24]" started-at="2026-05-26T11:57:22 IST" name="closeBrowser" finished-at="2026-05-26T11:57:27 IST" duration-ms="5516" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.hackathonproject.runner.TestRunner@732d0d24]" started-at="2026-05-27T12:11:09 IST" name="closeBrowser" finished-at="2026-05-27T12:11:22 IST" duration-ms="13162" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.hackathonproject.runner.TestRunner@732d0d24]" started-at="2026-05-26T11:57:27 IST" name="tearDownClass" finished-at="2026-05-26T11:57:27 IST" duration-ms="78" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.hackathonproject.runner.TestRunner@732d0d24]" started-at="2026-05-27T12:11:22 IST" name="tearDownClass" finished-at="2026-05-27T12:11:23 IST" duration-ms="1211" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
       </class> <!-- com.hackathonproject.runner.TestRunner -->
     </test> <!-- Edge Test -->
+    <test started-at="2026-05-27T12:09:47 IST" name="Chrome Test" finished-at="2026-05-27T12:11:32 IST" duration-ms="105098">
+      <class name="com.hackathonproject.runner.TestRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.hackathonproject.runner.TestRunner@7ceb3185]" started-at="2026-05-27T12:09:47 IST" name="setUpClass" finished-at="2026-05-27T12:09:49 IST" duration-ms="1568" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@600b90df]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method is-config="true" signature="setBrowser(java.lang.String)[pri:0, instance:com.hackathonproject.runner.TestRunner@7ceb3185]" started-at="2026-05-27T12:09:49 IST" name="setBrowser" finished-at="2026-05-27T12:09:49 IST" duration-ms="4" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBrowser -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.hackathonproject.runner.TestRunner@7ceb3185]" started-at="2026-05-27T12:09:49 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-27T12:10:58 IST" duration-ms="69317" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Find Hospitals in Bangalore open 24x7 with parking and rating above 3.5"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Finding Hospitals on Practo website"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.hackathonproject.runner.TestRunner@7ceb3185]" started-at="2026-05-27T12:10:58 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-27T12:11:08 IST" duration-ms="9434" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Capture top cities from Diagnostics page on Practo website"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Finding Hospitals on Practo website"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.hackathonproject.runner.TestRunner@7ceb3185]" started-at="2026-05-27T12:11:08 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-27T12:11:27 IST" duration-ms="18901" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify submit button is disabled when Corporate Wellness form has invalid phone number"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Finding Hospitals on Practo website"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.hackathonproject.runner.TestRunner@7ceb3185]" started-at="2026-05-27T12:11:27 IST" name="closeBrowser" finished-at="2026-05-27T12:11:32 IST" duration-ms="5188" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.hackathonproject.runner.TestRunner@7ceb3185]" started-at="2026-05-27T12:11:32 IST" name="tearDownClass" finished-at="2026-05-27T12:11:32 IST" duration-ms="225" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- com.hackathonproject.runner.TestRunner -->
+    </test> <!-- Chrome Test -->
   </suite> <!-- Practo Cross-Browser Suite -->
 </testng-results>

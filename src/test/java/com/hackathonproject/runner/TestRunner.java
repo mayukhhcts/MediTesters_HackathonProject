@@ -6,16 +6,13 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
-
 import com.hackathonproject.base.BaseTest;
+import com.hackathonproject.util.ExcelWriter;
 
 @CucumberOptions(
         features = "src/test/resources/features",
-        glue = {
-                "com.hackathonproject.steps",
-                "com.hackathonproject.base",
-                "com.hackathonproject.hooks"
-        },
+        glue = {"com.hackathonproject.steps", "com.hackathonproject.base", "com.hackathonproject.hooks"},
+        tags = "@Smoke",   // ← Runs all @Smoke scenarios across all groups
         plugin = {
                 "pretty",
                 "html:target/cucumber-reports/cucumber.html",
@@ -26,25 +23,22 @@ import com.hackathonproject.base.BaseTest;
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
 
-    private static final ThreadLocal<String> browserThreadLocal = new ThreadLocal<>();
-
-    // Keep static for backward compatibility with ScreenshotUtil and BaseTest
-    public static String browserName = "chrome";
+    private static final ThreadLocal<String> browserName = new ThreadLocal<>();
 
     public static String getBrowserName() {
-        return browserThreadLocal.get() != null ? browserThreadLocal.get() : browserName;
+        return browserName.get();
     }
 
     @BeforeClass
     @Parameters("browser")
     public void setBrowser(@Optional("chrome") String browser) {
-        browserThreadLocal.set(browser);
-        browserName = browser;
+        browserName.set(browser);
     }
 
     @AfterClass
     public void closeBrowser() {
+        ExcelWriter.cleanup();
         BaseTest.quitDriver();
-        browserThreadLocal.remove();
+        browserName.remove();
     }
 }

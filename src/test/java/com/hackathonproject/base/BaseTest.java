@@ -40,12 +40,21 @@ public class BaseTest {
                 || "ci".equalsIgnoreCase(System.getProperty("env"));
     }
 
+//    private void setupDriver(String property, String localPath, Runnable wdmSetup) {
+//        if (!isCI() && localPath != null && new File(localPath).exists()) {
+//            System.setProperty(property, localPath);
+//            log.info("Using local driver: " + localPath);
+//        } else {
+//            log.info("Using WebDriverManager for: " + property);
+//            wdmSetup.run();
+//        }
+//    }
     private void setupDriver(String property, String localPath, Runnable wdmSetup) {
-        if (!isCI() && localPath != null && new File(localPath).exists()) {
+        if (localPath != null && new File(localPath).exists()) {
             System.setProperty(property, localPath);
             log.info("Using local driver: " + localPath);
         } else {
-            log.info("Using WebDriverManager for: " + property);
+            log.info("Local driver not found, falling back to WebDriverManager");
             wdmSetup.run();
         }
     }

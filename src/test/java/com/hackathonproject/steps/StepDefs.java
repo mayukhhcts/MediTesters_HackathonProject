@@ -30,12 +30,12 @@ public class StepDefs {
         log.info("On Practo Home: {}", BaseTest.getDriver().getTitle());
     }
 
-    // ---------- Scenario 1 ----------
+    // ---------- Scenario 1 : @Smoke @Search ----------
     @When("the user searches for {string} location and {string} service")
     public void searchHospital(String location, String service) throws InterruptedException {
         log.info("Searching for service: {} in location: {}", service, location);
         HomePage home = new HomePage(BaseTest.getDriver());
-        home.searchLocation(location);  // now a no-op, URL handled in searchService
+        home.searchLocation(location);
         home.searchService(service);
         try {
             ScreenshotUtil.takeScreenshot(BaseTest.getDriver(), "1_search_result");
@@ -58,7 +58,7 @@ public class StepDefs {
         soft.assertAll();
     }
 
-    // ---------- Scenario 2 ----------
+    // ---------- Scenario 2 : @Smoke @Navigation ----------
     @When("the user clicks on Lab Tests")
     public void clickLabTests() {
         log.info("Clicking on Lab Tests");
@@ -87,7 +87,7 @@ public class StepDefs {
         soft.assertAll();
     }
 
-    // ---------- Scenario 3 ----------
+    // ---------- Scenario 3 : @Smoke @FormValidation ----------
     @When("the user navigates to Corporate Wellness page")
     public void navigateCorporate() {
         log.info("Navigating to Corporate Wellness page");
@@ -106,13 +106,8 @@ public class StepDefs {
 
     @And("the user fills the form with name {string} organization {string} phone {string} email {string}")
     public void fillForm(String name, String org, String phone, String email) {
-        log.info("Filling form for: {} from {}", name, org);
-        CorporateWellnessPage form = new CorporateWellnessPage(BaseTest.getDriver());
-        form.fillForm(name, org, phone, email);
-
-        // Click submit to trigger validation
-        form.clickSubmit();
-
+        log.info("Filling form - Name: {}, Org: {}, Phone: {}, Email: {}", name, org, phone, email);
+        new CorporateWellnessPage(BaseTest.getDriver()).fillForm(name, org, phone, email);
         try {
             ScreenshotUtil.takeScreenshot(BaseTest.getDriver(), "3_corporate_form_filled");
         } catch (IOException e) {
@@ -120,30 +115,24 @@ public class StepDefs {
         }
     }
 
-    @Then("the submit button status is captured")
-    public void captureStatus() {
+    // ← Step text updated to match updated feature file
+    @Then("the submit button should be disabled")
+    public void verifySubmitButtonDisabled() {
         CorporateWellnessPage form = new CorporateWellnessPage(BaseTest.getDriver());
+        boolean enabled = form.isSubmitEnabled();
+        log.info("Submit Button Enabled: {}", enabled);
 
-        // Capture HTML5 validation warnings
-        List<String> warnings = form.captureWarnings();
-
-        SoftAssert soft = new SoftAssert();
-
-        if (!warnings.isEmpty()) {
-            // Warnings found — form correctly rejected invalid input
-            log.info("=== WARNING MESSAGES CAPTURED ===");
-            for (String w : warnings) log.info(w);
-            log.info("=================================");
-            soft.assertTrue(true, "Warnings captured successfully");
-        } else {
-            // No warnings — form accepted invalid input — FAIL the test
-            log.error("No validation warnings found — form accepted invalid details!");
-            log.error("Phone: 8970657 (7 digits) and invalid org size should have been rejected");
-            soft.fail("FAIL: No warning message captured. " +
-                      "Practo form did not validate invalid input. " +
-                      "Either locators changed or site behaviour changed.");
+        try {
+            ScreenshotUtil.takeScreenshot(BaseTest.getDriver(), "3_submit_button_state");
+        } catch (IOException e) {
+            log.error(e.getMessage());
         }
 
+        SoftAssert soft = new SoftAssert();
+        // Explicit assertion — button MUST be disabled for invalid phone "8970657"
+        soft.assertFalse(enabled, "Submit button should be DISABLED when phone number is invalid (7 digits)");
         soft.assertAll();
+
+        log.info("Submit button disabled assertion passed — invalid phone correctly rejected");
     }
 }

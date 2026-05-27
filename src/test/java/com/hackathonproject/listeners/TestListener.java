@@ -1,5 +1,6 @@
 package com.hackathonproject.listeners;
-
+ 
+import com.aventstack.extentreports.Status;
 import com.hackathonproject.base.BaseTest;
 import com.hackathonproject.util.ExtentUtil;
 import com.hackathonproject.util.ScreenshotUtil;
@@ -8,18 +9,19 @@ import org.apache.logging.log4j.Logger;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-
+ 
 import java.io.IOException;
-
+ 
 public class TestListener implements ITestListener {
-
+ 
     private static final Logger log = LogManager.getLogger(TestListener.class);
-
+ 
     @Override
     public void onStart(ITestContext context) {
         log.info("========== TEST SUITE STARTED: {} ==========", context.getName());
+        ExtentUtil.initReport();           // <-- ADDED
     }
-
+ 
     @Override
     public void onFinish(ITestContext context) {
         log.info("========== TEST SUITE FINISHED: {} ==========", context.getName());
@@ -28,21 +30,24 @@ public class TestListener implements ITestListener {
         log.info("Skipped: {}", context.getSkippedTests().size());
         ExtentUtil.flushReport();
     }
-
+ 
     @Override
     public void onTestStart(ITestResult result) {
         log.info(">>> TEST STARTED: {}", result.getName());
+        ExtentUtil.createTest(result.getName());   // <-- ADDED
     }
-
+ 
     @Override
     public void onTestSuccess(ITestResult result) {
         log.info("✔ TEST PASSED: {}", result.getName());
+        ExtentUtil.getTest().log(Status.PASS, "Test passed");   // <-- ADDED
     }
-
+ 
     @Override
     public void onTestFailure(ITestResult result) {
         log.error("✘ TEST FAILED: {}", result.getName());
         log.error("Reason: {}", result.getThrowable().getMessage());
+        ExtentUtil.getTest().log(Status.FAIL, result.getThrowable());   // <-- ADDED
         try {
             if (BaseTest.getDriver() != null) {
                 ScreenshotUtil.takeScreenshot(BaseTest.getDriver(), "FAILED_" + result.getName());
@@ -51,9 +56,10 @@ public class TestListener implements ITestListener {
             log.error("Could not take failure screenshot: {}", e.getMessage());
         }
     }
-
+ 
     @Override
     public void onTestSkipped(ITestResult result) {
         log.warn("⚠ TEST SKIPPED: {}", result.getName());
+        ExtentUtil.getTest().log(Status.SKIP, "Test skipped");   // <-- ADDED
     }
 }
