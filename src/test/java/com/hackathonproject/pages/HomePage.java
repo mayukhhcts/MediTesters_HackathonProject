@@ -3,6 +3,7 @@ package com.hackathonproject.pages;
 import com.hackathonproject.util.ConfigReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -12,11 +13,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class HomePage {
+
     WebDriver driver;
     WebDriverWait wait;
     Actions actions;
 
-    private final By labTestsLink = By.xpath("//a[.//div[text()='Lab Tests']]");
+    private By cityInput = By.xpath("//*[@id=\"c-omni-container\"]/div/div[1]/div/input");
+    private By searchInput = By.xpath("//input[contains(@placeholder,'Search doctors')]");
+    private By labTestsLink = By.xpath("//*[text()='Lab Tests']");
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -24,18 +28,27 @@ public class HomePage {
         this.actions = new Actions(driver);
     }
 
-    // Directly navigates to Bangalore hospitals — no dropdown interaction
     public void searchLocation(String location) {
-        // location handled together in searchService via direct URL
+        WebElement city = wait.until(ExpectedConditions.elementToBeClickable(cityInput));
+
+        city.sendKeys(Keys.CONTROL + "a");
+        city.sendKeys(Keys.DELETE);
+        city.sendKeys(location);
+
+        By suggestion = By.xpath("//div[text()='" + location + "']");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(suggestion)).click();
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(suggestion));
     }
 
     public void searchService(String service) {
-        // Navigate directly to the search results URL — works in both Chrome and Edge
-        driver.navigate().to("https://www.practo.com/bangalore/hospitals");
-        wait.until(ExpectedConditions.or(
-            ExpectedConditions.titleContains("Bangalore"),
-            ExpectedConditions.titleContains("Hospital")
-        ));
+        WebElement search = wait.until(ExpectedConditions.elementToBeClickable(searchInput));
+
+        search.clear();
+        search.sendKeys(service);
+
+        By suggestion = By.xpath("//*[text()='" + service + "']");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(suggestion)).click();
+        wait.until(ExpectedConditions.urlContains("search"));
     }
 
     public void clickLabTests() {
@@ -46,8 +59,7 @@ public class HomePage {
         driver.navigate().to("https://www.practo.com/");
 
         By forCorporates = By.xpath(
-            "//*[contains(@class,'nav-interact') and contains(text(),'For Corporates')]"
-        );
+                "//*[contains(@class,'nav-interact') and contains(text(),'For Corporates')]");
         By wellnessPlans = By.xpath("//a[@href='/plus/corporate']");
 
         WebElement corporatesMenu = wait.until(ExpectedConditions.elementToBeClickable(forCorporates));
